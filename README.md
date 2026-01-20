@@ -31,4 +31,12 @@ The architecture was validated by deploying cross-VLAN services:
 ## Topology Overview
 <img width="1393" height="975" alt="Captura de pantalla 2026-01-20 122432" src="https://github.com/user-attachments/assets/239023f3-98a2-4ff2-b1d8-9888b87cd9dc" />
 <img width="921" height="435" alt="image-b2c2d27c-9dfd-488c-bf8f-1ce9db4e160d" src="https://github.com/user-attachments/assets/39d7d1ad-16b3-4c1b-9174-23d9f5794b3b" />
+##  Future Perspectives & Scalability
+
+While the current architecture is fully functional, the following enhancements are planned to transition this setup into a production-ready environment:
+
+* **High Availability (HA) & Redundancy:** To eliminate the **Single Point of Failure (SPOF)** at the Layer 3 boundary, I plan to implement a redundant gateway configuration using **FHRP (First Hop Redundancy Protocols)** such as **VRRP** or **HSRP**, integrating a second Raspberry Pi in an active/passive state.
+* **Performance Stress Testing:** Conducting exhaustive throughput analysis under maximum load to determine the Raspberry Pi’s performance limits during intensive NAT and deep packet inspection (DPI) operations.
+* **Hardware Offloading:** Exploring the transition from a Router-on-a-Stick model to a **Layer 3 Switch** for inter-VLAN routing to leverage hardware-based wire-speed switching.
+* **Advanced Monitoring:** Integration of **SNMP** or **Prometheus/Grafana** dashboards for real-time monitoring of traffic patterns, bandwidth utilization, and firewall drop rates across all segmented VLANs.
 
